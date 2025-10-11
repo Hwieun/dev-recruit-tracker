@@ -1,0 +1,171 @@
+.calendar-view {
+  width: 100%;
+}
+
+.calendar-header {
+  margin-bottom: 2rem;
+}
+
+.calendar-header h1 {
+  margin: 0 0 1rem 0;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.calendar-container {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.rbc-calendar {
+  font-family: inherit;
+}
+
+.rbc-header {
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.rbc-today {
+  background-color: #f0f4ff;
+}
+
+.rbc-event {
+  padding: 2px 5px;
+  font-size: 0.875rem;
+}
+
+.rbc-toolbar {
+  margin-bottom: 1rem;
+}
+
+.rbc-toolbar button {
+  color: #495057;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0 2px;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #e9ecef;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #646cff;
+  color: white;
+  border-color: #646cff;
+}
+
+.event-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.event-modal-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.event-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.event-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.event-modal-header button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-modal-header button:hover {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.event-modal-body {
+  padding: 1.5rem;
+}
+
+.event-modal-body p {
+  margin: 0.75rem 0;
+  color: #000;
+}
+
+.event-modal-body strong {
+  color: #495057;
+}
+
+.event-modal-body a {
+  color: #646cff;
+  text-decoration: none;
+}
+
+.event-modal-body a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 0.5rem;
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rbc-toolbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

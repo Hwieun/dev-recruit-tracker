@@ -1,0 +1,165 @@
+/* Design System - Matching Figma */
+:root {
+  --primary-green: #5CB85C;
+  --primary-blue: #4A90E2;
+  --gray-50: #F8F9FA;
+  --gray-100: #F5F5F5;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-700: #495057;
+  --gray-800: #343A40;
+  --gray-900: #212529;
+  --white: #FFFFFF;
+  --border-color: #E0E0E0;
+  --text-primary: #212529;
+  --text-secondary: #6C757D;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray-50);
+}
+
+.navbar {
+  background-color: var(--white);
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: var(--gray-100);
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--gray-50);
+}
+
+/* Button Styles - Matching Figma */
+button {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.btn-primary {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #3A7BC8;
+}
+
+button.btn-success {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+button.btn-success:hover {
+  background-color: #4DA34D;
+}
+
+button.btn-secondary {
+  background-color: var(--gray-200);
+  color: var(--text-primary);
+}
+
+button.btn-secondary:hover {
+  background-color: var(--gray-300);
+}
+
+button:disabled {
+  background-color: var(--gray-300);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Form Elements */
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: var(--white);
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.bg-gray-50 {
+  background-color: var(--gray-50);
+}
+
+.border-gray {
+  border-color: var(--border-color);
+}

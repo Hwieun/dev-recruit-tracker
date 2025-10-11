@@ -1,0 +1,187 @@
+.dashboard {
+  width: 100%;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #212529;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.recent-positions h2,
+.upcoming-events h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.position-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.position-card {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.position-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.5rem;
+}
+
+.position-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.position-title {
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #495057;
+}
+
+.position-meta {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-applied { background-color: #e7f3ff; color: #0066cc; }
+.status-screening { background-color: #fff3e0; color: #e65100; }
+.status-coding_test { background-color: #f3e5f5; color: #7b1fa2; }
+.status-technical_interview { background-color: #e8f5e9; color: #2e7d32; }
+.status-cultural_fit { background-color: #e0f2f1; color: #00695c; }
+.status-final_interview { background-color: #fce4ec; color: #c2185b; }
+.status-offer { background-color: #dcedc8; color: #33691e; }
+.status-rejected { background-color: #ffebee; color: #c62828; }
+.status-accepted { background-color: #c8e6c9; color: #1b5e20; }
+.status-declined { background-color: #f5f5f5; color: #616161; }
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-card {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.event-date {
+  background-color: #646cff;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 80px;
+  height: fit-content;
+}
+
+.event-details h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+.event-type {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0.25rem 0;
+  text-transform: capitalize;
+}
+
+.event-time {
+  font-size: 0.875rem;
+  color: #495057;
+  margin: 0;
+}
+
+.no-events {
+  text-align: center;
+  color: #6c757d;
+  padding: 2rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
