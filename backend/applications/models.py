@@ -28,7 +28,7 @@ class Position(models.Model):
     )
     salary_range = models.CharField(max_length=100, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
-    application_date = models.DateField(default=timezone.now)
+    application_date = models.DateField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
