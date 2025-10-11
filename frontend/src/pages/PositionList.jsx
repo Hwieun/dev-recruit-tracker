@@ -61,7 +61,23 @@ function PositionList() {
       const res = await positionAPI.fetchJD({
         url: form.recruiting_link,
       });
-      setForm({ ...form, jdText: res.data.jd_text });
+
+      // Handle response format: { success: true, data: { ... } }
+      if (res.data.success && res.data.data) {
+        const fetchedData = res.data.data;
+        setFormData({
+          ...form,
+          company_name: fetchedData.company_name || form.company_name,
+          position_title: fetchedData.position_title || form.position_title,
+          job_description: fetchedData.job_description || form.job_description,
+          location: fetchedData.location || form.location,
+          salary_range: fetchedData.salary_range || form.salary_range,
+          recruiting_link: fetchedData.recruiting_link || form.recruiting_link,
+        });
+        alert("JD 정보를 성공적으로 가져왔습니다!");
+      } else {
+        alert("JD 정보를 가져오는데 실패했습니다.");
+      }
     } catch (err) {
       console.error("JD fetch error:", err);
       alert("JD를 불러오는 중 오류가 발생했습니다.");
