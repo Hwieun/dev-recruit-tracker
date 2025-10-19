@@ -18,6 +18,6 @@ class ProcessNoteAdmin(admin.ModelAdmin):
 
 @admin.register(InterviewEvent)
 class InterviewEventAdmin(admin.ModelAdmin):
-    list_display = ['position', 'event_type', 'title', 'start_datetime', 'end_datetime']
+    list_display = ['position', 'event_type', 'title', 'start_datetime', 'duration']
     list_filter = ['event_type', 'start_datetime']
     search_fields = ['title', 'description']

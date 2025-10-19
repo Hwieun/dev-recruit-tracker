@@ -78,6 +78,11 @@ class InterviewEvent(models.Model):
         ('other', 'Other'),
     ]
 
+    MEETING_TYPE = [
+        ('on-site', 'On-site'),
+        ('remote', 'Remote')
+    ]
+
     position = models.ForeignKey(
         Position,
         on_delete=models.CASCADE,
@@ -87,7 +92,8 @@ class InterviewEvent(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     start_datetime = models.DateTimeField()
-    end_datetime = models.DateTimeField()
+    duration = models.IntegerField(default=60)
+    meeting_type = models.CharField(max_length=20, choices=MEETING_TYPE, default='on-site')
     location = models.CharField(max_length=255, blank=True, null=True)
     meeting_link = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

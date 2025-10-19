@@ -13,8 +13,8 @@ class InterviewEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = InterviewEvent
         fields = [
-            'id', 'event_type', 'title', 'description',
-            'start_datetime', 'end_datetime', 'location',
+            'id', 'position', 'event_type', 'title', 'description',
+            'start_datetime', 'duration', 'meeting_type', 'location',
             'meeting_link', 'created_at', 'updated_at'
         ]
         read_only_fields = ['created_at', 'updated_at']
