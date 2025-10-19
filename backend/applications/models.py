@@ -54,7 +54,7 @@ class ProcessNote(models.Model):
         on_delete=models.CASCADE,
         related_name='notes'
     )
-    process_type = models.CharField(max_length=50, choices=PROCESS_TYPE_CHOICES)
+    process_type = models.CharField(max_length=50, choices=PROCESS_TYPE_CHOICES, default='general')
     title = models.CharField(max_length=255)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

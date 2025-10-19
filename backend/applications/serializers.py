@@ -5,7 +5,7 @@ from .models import Position, ProcessNote, InterviewEvent
 class ProcessNoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProcessNote
-        fields = ['id', 'process_type', 'title', 'content', 'created_at', 'updated_at']
+        fields = ['id', 'position', 'process_type', 'title', 'content', 'created_at', 'updated_at']
         read_only_fields = ['created_at', 'updated_at']
 
 
