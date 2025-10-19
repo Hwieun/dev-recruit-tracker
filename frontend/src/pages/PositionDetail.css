@@ -236,4 +236,24 @@
   .status-buttons button {
     width: 100%;
   }
+
+  .toggle-container {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .toggle-container button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+  }
+
+  .toggle-container button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
 }

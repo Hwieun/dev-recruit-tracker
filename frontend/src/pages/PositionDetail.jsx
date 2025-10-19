@@ -23,7 +23,8 @@ function PositionDetail() {
     title: '',
     description: '',
     start_datetime: '',
-    end_datetime: '',
+    duration: '',
+    meeting_type: 'on-site',
     location: '',
     meeting_link: '',
   });
@@ -315,30 +316,60 @@ function PositionDetail() {
               value={eventForm.description}
               onChange={(e) => setEventForm({ ...eventForm, description: e.target.value })}
             />
+            <p>Start DateTime</p>
             <input
               type="datetime-local"
               value={eventForm.start_datetime}
               onChange={(e) => setEventForm({ ...eventForm, start_datetime: e.target.value })}
               required
             />
+            <p>Duration Minutes</p>
             <input
-              type="datetime-local"
-              value={eventForm.end_datetime}
-              onChange={(e) => setEventForm({ ...eventForm, end_datetime: e.target.value })}
+              type="number"
+              placeholder="60"
+              value={eventForm.duration}
+              onChange={(e) => setEventForm({ ...eventForm, duration: e.target.value })}
               required
             />
-            <input
-              type="text"
-              placeholder="Location"
-              value={eventForm.location}
-              onChange={(e) => setEventForm({ ...eventForm, location: e.target.value })}
-            />
-            <input
-              type="url"
-              placeholder="Meeting Link"
-              value={eventForm.meeting_link}
-              onChange={(e) => setEventForm({ ...eventForm, meeting_link: e.target.value })}
-            />
+            <div className="toggle-container">
+              <button
+                type="button"
+                className={eventForm.meeting_type === 'on-site' ? 'active' : ''}
+                onClick={() => setEventForm({ ...eventForm, meeting_type: 'on-site' })}
+              >
+                On-site
+              </button>
+              <button
+                type="button"
+                className={eventForm.meeting_type === 'remote' ? 'active' : ''}
+                onClick={() => setEventForm({ ...eventForm, meeting_type: 'remote' })}
+              >
+                Remote
+              </button>
+            </div>
+
+            {eventForm.meeting_type === 'on-site' && (
+              <div>
+                <p>Location</p>
+                <input
+                  type="text"
+                  placeholder="Location"
+                  value={eventForm.location}
+                  onChange={(e) => setEventForm({ ...eventForm, location: e.target.value })}
+                />
+              </div>
+            )}
+
+            {eventForm.meeting_type === 'remote' && (
+              <div><p>Meeting Link</p>
+                <input
+                  type="url"
+                  placeholder="Meeting Link"
+                  value={eventForm.meeting_link}
+                  onChange={(e) => setEventForm({ ...eventForm, meeting_link: e.target.value })}
+                />
+              </div>
+            )}
             <button type="submit">Save Event</button>
           </form>
         )}
